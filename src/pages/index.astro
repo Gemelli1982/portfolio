@@ -1,17 +1,31 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Hero from '../components/Hero.astro';
+import Progress from '../components/Progress.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Welcome to my Portfolio">
-<h1>to be continued..</h1>
-<Card title='test' body='Inhalt'	href='www.google.de'></Card>
-<section id="hero">
-    <Hero />
-</section>
-<section id="skills"></section>
-<section id="timeline"></section>
-<section id="projects"></section>
+<Layout title="Welcome to Astro.">
+	<section id="hero">
+		<Hero />
+	</section>
+	<section id="skills">
+		<div class="skills-list">
+			<Progress title="HTML" progress="20" color='red' />
+			<Progress title="CSS" progress="30" color='blue' />
+			<Progress title="JavaScript" progress='20' color='orange' />
+			<Progress title='Vibes' progress='90' color='fuchsia' />
+		</div>
+	</section>
+	<section id="timeline"></section>
+	<section id="projects"></section>
 </Layout>
 
+<style>
+	.skills-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+	}
+</style>
